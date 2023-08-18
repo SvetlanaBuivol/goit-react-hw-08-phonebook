@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginAsync } from 'redax/auth/authOperations';
 
 function LoginForm() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,8 +18,16 @@ function LoginForm() {
     }
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    dispatch(loginAsync({ email, password }));
+    setEmail('');
+    setPassword('');
+  }
+
   return (
-    <form autoComplete="off">
+    <form onSubmit={handleSubmit} autoComplete="off">
       <label>
         Email
         <input

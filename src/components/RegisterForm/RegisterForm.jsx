@@ -1,6 +1,9 @@
-const { useState } = require('react');
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { registerAsync } from 'redax/auth/authOperations';
 
 function RegisterForm() {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,8 +21,17 @@ function RegisterForm() {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    dispatch(registerAsync({ name, email, password }));
+    setName('');
+    setEmail('');
+    setPassword('');
+  }
+
   return (
-    <form  autoComplete="off">
+    <form onSubmit={handleSubmit} autoComplete="off">
       <label>
         Name
         <input type="text" name="name" value={name} onChange={handleChange} />

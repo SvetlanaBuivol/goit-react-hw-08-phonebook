@@ -3,15 +3,19 @@ import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header } from './Layput.styled';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redax/auth/authSelectors';
 
 function Layout() {
+  const isLoggedIn = useSelector(getIsLoggedIn);
+
   return (
     <>
-      <header>
+      <Header>
         <Navigation />
-        <AuthNav />
-        <UserMenu />
-      </header>
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </Header>
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
