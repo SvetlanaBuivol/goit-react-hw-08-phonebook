@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { logIn, logOut, signUp, token } from 'services/contactsApi';
+import { currentUser, logIn, logOut, signUp, token } from 'services/contactsApi';
 
 export const registerAsync = createAsyncThunk(
   'auth/register',
@@ -35,3 +35,20 @@ export const logOutAsync = createAsyncThunk('auth/logout', async (_, thunkAPI) =
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const refreshCurrentUserAsync = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
+  const state = thunkAPI.getState();
+  const persistedToken = state.auth.token;
+
+  if (!persistedToken) {
+    return thunkAPI.rejectWithValue();
+  }
+
+  token.set(persistedToken);
+  try {
+    const { data } = await currentUser();
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+})
