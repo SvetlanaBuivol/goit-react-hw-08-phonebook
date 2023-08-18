@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
 import Layout from './Layout/Layout';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshCurrentUserAsync } from 'redax/auth/authOperations';
-import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
+import PrivateRoute from './utils/routes/PrivateRoute';
+import PublicRoute from './utils/routes/PublicRoute';
+import { getRefreshingUser } from 'redax/auth/authSelectors';
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
 const Login = lazy(() => import('pages/Login'));
@@ -12,12 +13,13 @@ const Contacts = lazy(() => import('pages/Contacts'));
 
 export default function App() {
   const dispatch = useDispatch();
+  const isRefreshedUser = useSelector(getRefreshingUser);
 
   useEffect(() => {
     dispatch(refreshCurrentUserAsync());
   }, [dispatch]);
 
-  return (
+  return !isRefreshedUser && (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />

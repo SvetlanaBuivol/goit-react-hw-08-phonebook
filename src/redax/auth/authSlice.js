@@ -8,6 +8,7 @@ const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -29,9 +30,16 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
     });
+    builder.addCase(refreshCurrentUserAsync.pending, state => {
+      state.isRefreshing = true;
+    });
     builder.addCase(refreshCurrentUserAsync.fulfilled, (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
+      state.isRefreshing = false;
+    });
+    builder.addCase(refreshCurrentUserAsync.rejected, state => {
+      state.isRefreshing = false;
     })
   },
 });
