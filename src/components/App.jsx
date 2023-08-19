@@ -19,35 +19,29 @@ export default function App() {
     dispatch(refreshCurrentUserAsync());
   }, [dispatch]);
 
-  return (
-    !isRefreshedUser && (
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route
-            path="/register"
-            element={
-              <PublicRoute restricted redirectTo="/contacts">
-                <Register />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <PublicRoute restricted redirectTo="/contacts">
-                <Login />
-              </PublicRoute>
-            }
-          />
-          <Route
-          path="/contacts"
+  return isRefreshedUser ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route
+          path="/register"
           element={
-            <PrivateRoute redirectTo="/register" component={Contacts}/>
+            <PublicRoute redirectTo="/contacts" component={<Register />} />
           }
         />
-        </Route>
-      </Routes>
-    )
+        <Route
+          path="/login"
+          element={<PublicRoute redirectTo="/contacts" component={<Login />} />}
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/register" component={<Contacts />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
