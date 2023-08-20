@@ -1,3 +1,4 @@
+import { List, ListItem } from '@chakra-ui/react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -7,18 +8,16 @@ function Navigation() {
   const isLoggedIn = useSelector(getIsLoggedIn);
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        {isLoggedIn && (
-          <li>
-            <NavLink to="/contacts">Contacts</NavLink>
-          </li>
-        )}
-      </ul>
-    </nav>
+    <List fontSize='sm' gap='24px' alignItems='center' display='flex' flexDirection={{base: 'flex', md: 'column'}}>
+      <ListItem>
+        <NavLink to="/">Home</NavLink>
+      </ListItem>
+      {isLoggedIn && (
+        <ListItem>
+          <NavLink to="/contacts">Contacts</NavLink>
+        </ListItem>
+      )}
+    </List>
   );
 }
 

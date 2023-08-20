@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginAsync } from 'redax/auth/authOperations';
@@ -48,7 +49,7 @@ function LoginForm() {
         />
       </label>
 
-      <button type="submit">Login</button>
+      <Button variant='myBtn' type="submit">Login</Button>
     </form>
   );
 }

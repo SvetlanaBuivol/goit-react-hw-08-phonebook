@@ -1,3 +1,4 @@
+import { Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutAsync } from 'redax/auth/authOperations';
@@ -12,10 +13,10 @@ function UserMenu() {
     }
 
   return (
-    <div>
-      <p>Hello, {name}</p>
-      <button onClick={handleClick}>Logout</button>
-    </div>
+    <Flex gap='16px' alignItems='center' flexDirection={{md: 'column'}}>
+      <Text fontSize='1em' >Hello, {name}</Text>
+      <Button variant='myBtn' onClick={handleClick}>Logout</Button>
+    </Flex>
   );
 }
 

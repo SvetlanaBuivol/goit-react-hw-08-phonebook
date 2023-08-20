@@ -65,8 +65,8 @@ function EditModal({ isOpen, onClose, contact }) {
         <ModalBody>
           <FormControl>
             <FormLabel>Name</FormLabel>
-                      <Input
-                          css={inputStyles}
+            <Input
+              {...inputStyles}
               variant="filled"
               value={name}
               onChange={e => setName(e.target.value)}
@@ -74,8 +74,8 @@ function EditModal({ isOpen, onClose, contact }) {
           </FormControl>
           <FormControl mt={4}>
             <FormLabel>Number</FormLabel>
-                      <Input
-                          css={inputStyles}
+            <Input
+              {...inputStyles}
               variant="filled"
               value={number}
               onChange={e => setNumber(e.target.value)}
@@ -83,7 +83,7 @@ function EditModal({ isOpen, onClose, contact }) {
           </FormControl>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={handleSave}>
+          <Button mr={3} onClick={handleSave}>
             Save
           </Button>
           <Button onClick={onClose}>Cancel</Button>

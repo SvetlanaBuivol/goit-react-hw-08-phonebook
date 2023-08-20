@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { registerAsync } from 'redax/auth/authOperations';
+import { Button } from '@chakra-ui/react';
+
 
 function RegisterForm() {
   const dispatch = useDispatch();
@@ -57,7 +59,7 @@ function RegisterForm() {
         />
       </label>
 
-      <button type="submit">Register</button>
+      <Button variant='myBtn' type="submit">Register</Button>
     </form>
   );
 }

@@ -5,12 +5,12 @@ import {
   Label,
   Input,
   Icon,
-  Button,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
 import { addContactAsync } from 'redax/contacts/contactsOperetions';
 import { getContacts } from 'redax/contacts/contactSelectors';
+import { Button } from '@chakra-ui/react';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -116,7 +116,7 @@ export default function ContactForm() {
             required
           />
         </Label>
-        <Button type="submit">Add contact</Button>
+        <Button variant='myBtn' type="submit">Add contact</Button>
       </div>
     </FormContainer>
   );
