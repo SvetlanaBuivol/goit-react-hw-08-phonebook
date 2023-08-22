@@ -36,7 +36,7 @@ const fontSizes = {
 
 const breakpoints = {
   sm: '280px',
-  md: '380px',
+  md: '480px',
   lg: '768px',
   xl: '1200px',
 };

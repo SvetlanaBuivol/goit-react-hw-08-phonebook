@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { registerAsync } from 'redax/auth/authOperations';
-import { Button } from '@chakra-ui/react';
+import { Button, FormControl } from '@chakra-ui/react';
 
 
 function RegisterForm() {
@@ -33,7 +33,7 @@ function RegisterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
+    <FormControl onSubmit={handleSubmit} autoComplete="off">
       <label>
         Name
         <input type="text" name="name" value={name} onChange={handleChange} />
@@ -60,7 +60,7 @@ function RegisterForm() {
       </label>
 
       <Button variant='myBtn' type="submit">Register</Button>
-    </form>
+    </FormControl>
   );
 }
 

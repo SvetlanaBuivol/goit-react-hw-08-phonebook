@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginAsync } from 'redax/auth/authOperations';
@@ -29,25 +29,25 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input
+      <FormControl>
+      <FormLabel> Email</FormLabel>
+        <Input
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
         />
-      </label>
+        </FormControl>
 
-      <label>
-        Password
-        <input
+      <FormControl>
+      <FormLabel>Password</FormLabel>
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
         />
-      </label>
+        </FormControl>
 
       <Button variant='myBtn' type="submit">Login</Button>
     </form>
