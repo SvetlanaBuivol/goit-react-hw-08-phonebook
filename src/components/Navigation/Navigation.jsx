@@ -3,12 +3,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getIsLoggedIn } from 'redax/auth/authSelectors';
+import { navList } from 'theme';
 
 function Navigation() {
   const isLoggedIn = useSelector(getIsLoggedIn);
 
   return (
-    <List fontSize='sm' gap='24px' alignItems='center' display='flex' flexDirection={{base: 'flex', md: 'column'}}>
+    <List sx={navList}>
       <ListItem>
         <NavLink to="/">Home</NavLink>
       </ListItem>

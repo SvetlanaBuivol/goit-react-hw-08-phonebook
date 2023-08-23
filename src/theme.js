@@ -114,8 +114,22 @@ export const navGridItem = {
   display: 'flex',
   flexDirection: { sm: 'row', md: 'column' },
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: {base: 'space-between', md: 'space-around'},
   bg: 'customColor.50',
   minHeight: { md: '100vh', lg: '100vh' },
   p: { sm: '15px', lg: '36px' },
+};
+
+export const mainGridItem = {
+  py: '60px',
+  px: '20px',
+};
+
+export const navList = {
+    fontSize: 'sm',
+    color: 'customColor.500',
+  gap: '24px',
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: { base: 'flex', md: 'column' },
 };
