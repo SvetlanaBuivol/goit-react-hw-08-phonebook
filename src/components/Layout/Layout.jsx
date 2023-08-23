@@ -17,7 +17,7 @@ function Layout() {
       <GridItem
         as="header"
         sx={navGridItem}
-        colSpan={{ sm: 7, md: 1, lg: 1 }}
+        colSpan={{ base: 7, md: 1, lg: 1 }}
       >
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
