@@ -12,7 +12,7 @@ import {
   InputLeftElement,
 } from '@chakra-ui/react';
 import { MdEmail } from 'react-icons/md';
-import { formLabel, hoverIcon, inputLeftEl } from 'theme';
+import { formHeader, formLabel, hoverIcon, inputLeftEl } from 'theme';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { BsFillPersonFill } from 'react-icons/bs';
 
@@ -46,7 +46,7 @@ function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <Heading color='customColor.500' mb='8px'>Register form</Heading>
+      <Heading sx={formHeader}>Register</Heading>
       <FormControl>
         <FormLabel sx={formLabel}>Name</FormLabel>
         <InputGroup sx={hoverIcon}>

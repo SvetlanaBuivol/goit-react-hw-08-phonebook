@@ -12,6 +12,7 @@ const colors = {
 };
 
 const fontSizes = {
+    xxs: '1em',
     xs: '1.2em',
     sm: '1.3em',
   md: '1.5em',
@@ -97,7 +98,14 @@ export const inputLeftEl = {
 };
 
 export const formLabel = {
-    fontSize: 'sm',
+    fontSize: {base: 'xxs', md: 'xs', lg: 'md'},
     color: 'customColor.300',
     mb: '4px',
+}
+
+export const formHeader = {
+    fontSize: { base: 'xs', md: 'lg', lg: '2.25rem' },
+    color: 'customColor.500',
+    mb: '8px',
+    textAlign: 'center',
 }

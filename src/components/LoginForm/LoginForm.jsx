@@ -2,6 +2,7 @@ import {
   Button,
   FormControl,
   FormLabel,
+  Heading,
   Icon,
   Input,
   InputGroup,
@@ -12,7 +13,7 @@ import { RiLockPasswordFill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { loginAsync } from 'redax/auth/authOperations';
 import { MdEmail } from 'react-icons/md';
-import { formLabel, hoverIcon, inputLeftEl } from 'theme';
+import { formHeader, formLabel, hoverIcon, inputLeftEl } from 'theme';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
+      <Heading sx={formHeader}>Log in</Heading>
       <FormControl>
         <FormLabel sx={formLabel}>Email</FormLabel>
         <InputGroup sx={hoverIcon}>
