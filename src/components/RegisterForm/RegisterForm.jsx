@@ -5,6 +5,7 @@ import {
   Button,
   FormControl,
   FormLabel,
+  Heading,
   Icon,
   Input,
   InputGroup,
@@ -45,6 +46,7 @@ function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
+      <Heading color='customColor.500' mb='8px'>Register form</Heading>
       <FormControl>
         <FormLabel sx={formLabel}>Name</FormLabel>
         <InputGroup sx={hoverIcon}>
