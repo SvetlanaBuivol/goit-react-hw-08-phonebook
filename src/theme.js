@@ -6,15 +6,15 @@ const colors = {
     100: '#ccc',
     200: '#999',
     300: '#666',
-        400: '#555',
+    400: '#555',
     500: '#444',
   },
 };
 
 const fontSizes = {
-    xxs: '1em',
-    xs: '1.2em',
-    sm: '1.3em',
+  xxs: '1em',
+  xs: '1.2em',
+  sm: '1.3em',
   md: '1.5em',
   lg: '1.75em',
 };
@@ -29,8 +29,8 @@ const breakpoints = {
 const Button = defineStyleConfig({
   variants: {
     myBtn: {
-          display: 'block',
-        height: '2.8rem',
+      display: 'block',
+      height: '2.8rem',
       backgroundColor: '#ccc',
       color: '#666',
       fontSize: 'xs',
@@ -57,7 +57,7 @@ const Input = defineStyleConfig({
     filled: {
       field: {
         height: '3rem',
-            fontSize: 'md',
+        fontSize: 'md',
         color: 'customColor.500',
         bg: 'customColor.50',
         _hover: {
@@ -80,7 +80,7 @@ export const theme = extendTheme({
   components: { Button, Input },
 });
 
-// common styles //
+// COMMON styles //
 
 export const hoverIcon = {
   _hover: {
@@ -98,14 +98,24 @@ export const inputLeftEl = {
 };
 
 export const formLabel = {
-    fontSize: {base: 'xxs', md: 'xs', lg: 'md'},
-    color: 'customColor.300',
-    mb: '4px',
-}
+  fontSize: { base: 'xxs', md: 'xs', lg: 'md' },
+  color: 'customColor.300',
+  mb: '4px',
+};
 
 export const formHeader = {
-    fontSize: { base: 'xs', md: 'lg', lg: '2.25rem' },
-    color: 'customColor.500',
-    mb: '8px',
-    textAlign: 'center',
-}
+  fontSize: { sm: 'xs', md: 'lg', lg: '2.25rem' },
+  color: 'customColor.500',
+  mb: '8px',
+  textAlign: 'center',
+};
+
+export const navGridItem = {
+  display: 'flex',
+  flexDirection: { sm: 'row', md: 'column' },
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  bg: 'customColor.50',
+  minHeight: { md: '100vh', lg: '100vh' },
+  p: { sm: '15px', lg: '36px' },
+};

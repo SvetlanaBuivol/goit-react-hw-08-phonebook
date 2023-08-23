@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redax/auth/authSelectors';
 import { Grid, GridItem } from '@chakra-ui/react';
+import { navGridItem } from 'theme';
 
 function Layout() {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -15,14 +16,8 @@ function Layout() {
     <Grid templateColumns="repeat(7, 1fr)">
       <GridItem
         as="header"
-        display='flex'
-        flexDirection={{base: 'row', md: 'column'}}
-        alignItems='center'
-        justifyContent='space-around'
-        colSpan={{ base: 7, md: 1, lg: 1 }}
-        bg="customColor.50"
-        minHeight={{md: '100vh', lg: '100vh'}}
-        p={{ base: '15px', lg: '36px' }}
+        sx={navGridItem}
+        colSpan={{ sm: 7, md: 1, lg: 1 }}
       >
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
