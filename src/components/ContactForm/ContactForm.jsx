@@ -92,6 +92,7 @@ export default function ContactForm() {
           </Icon>
 
           <Input
+            variant='filled'
             value={name}
             onChange={handleInputChange}
             type="text"
@@ -107,6 +108,7 @@ export default function ContactForm() {
           </Icon>
 
           <Input
+            variant='filled'
             value={number}
             onChange={handleInputChange}
             type="tel"

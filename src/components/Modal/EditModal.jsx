@@ -17,7 +17,6 @@ import {
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 import { editContactAsync } from 'redax/contacts/contactsOperetions';
-import { inputStyles } from './styles';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -66,7 +65,6 @@ function EditModal({ isOpen, onClose, contact }) {
           <FormControl>
             <FormLabel>Name</FormLabel>
             <Input
-              {...inputStyles}
               variant="filled"
               value={name}
               onChange={e => setName(e.target.value)}
@@ -75,7 +73,6 @@ function EditModal({ isOpen, onClose, contact }) {
           <FormControl mt={4}>
             <FormLabel>Number</FormLabel>
             <Input
-              {...inputStyles}
               variant="filled"
               value={number}
               onChange={e => setNumber(e.target.value)}
@@ -83,10 +80,10 @@ function EditModal({ isOpen, onClose, contact }) {
           </FormControl>
         </ModalBody>
         <ModalFooter>
-          <Button mr={3} onClick={handleSave}>
+          <Button variant='myBtn' mr={3} onClick={handleSave}>
             Save
           </Button>
-          <Button onClick={onClose}>Cancel</Button>
+          <Button variant='myBtn' onClick={onClose}>Cancel</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>,

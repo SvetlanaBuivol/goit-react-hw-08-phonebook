@@ -1,5 +1,6 @@
-import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Icon, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { useState } from 'react';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { loginAsync } from 'redax/auth/authOperations';
 
@@ -25,31 +26,40 @@ function LoginForm() {
     dispatch(loginAsync({ email, password }));
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
       <FormControl>
-      <FormLabel> Email</FormLabel>
+        <FormLabel> Email</FormLabel>
         <Input
+          variant="filled"
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
         />
-        </FormControl>
+      </FormControl>
 
       <FormControl>
-      <FormLabel>Password</FormLabel>
+        <FormLabel>Password</FormLabel>
+        <InputGroup>
+        <InputLeftElement pointerEvents='none'>
+      <Icon as={RiLockPasswordFill} />
+    </InputLeftElement>
         <Input
+          variant="filled"
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
-        />
-        </FormControl>
+          />
+          </InputGroup>
+      </FormControl>
 
-      <Button variant='myBtn' type="submit">Login</Button>
+      <Button variant="myBtn" type="submit">
+        Login
+      </Button>
     </form>
   );
 }
