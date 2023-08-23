@@ -50,7 +50,12 @@ form {
     margin-right: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+    transition: transform 0.25s ease-in, box-shadow 0.25s ease-in;
+}
+
+form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 
