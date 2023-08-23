@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
-import {
-  FormContainer,
-  Label,
-  Input,
-  Icon,
-} from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
 import { addContactAsync } from 'redax/contacts/contactsOperetions';
 import { getContacts } from 'redax/contacts/contactSelectors';
-import { Button } from '@chakra-ui/react';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Heading,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react';
+import { formHeader, formLabel, hoverIcon, inputLeftEl } from 'theme';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -84,15 +88,16 @@ export default function ContactForm() {
   };
 
   return (
-    <FormContainer onSubmit={formSubmit}>
-      <div>
-        <Label>
-          <Icon>
-            <BsFillPersonFill size="22" />
-          </Icon>
-
+    <form onSubmit={formSubmit}>
+      <Heading sx={formHeader}>Add contact</Heading>
+      <FormControl>
+        <FormLabel sx={formLabel}>Name</FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={BsFillPersonFill} color="customColor.200" />
+          </InputLeftElement>
           <Input
-            variant='filled'
+            variant="filled"
             value={name}
             onChange={handleInputChange}
             type="text"
@@ -101,14 +106,17 @@ export default function ContactForm() {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-        </Label>
-        <Label>
-          <Icon>
-            <BsFillTelephoneFill size="22" />
-          </Icon>
+        </InputGroup>
+      </FormControl>
 
+      <FormControl>
+        <FormLabel sx={formLabel}>Number</FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={BsFillTelephoneFill} color="customColor.200" />
+          </InputLeftElement>
           <Input
-            variant='filled'
+            variant="filled"
             value={number}
             onChange={handleInputChange}
             type="tel"
@@ -117,9 +125,12 @@ export default function ContactForm() {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-        </Label>
-        <Button variant='myBtn' type="submit">Add contact</Button>
-      </div>
-    </FormContainer>
+        </InputGroup>
+      </FormControl>
+
+      <Button variant="myBtn" type="submit">
+        Add contact
+      </Button>
+    </form>
   );
 }

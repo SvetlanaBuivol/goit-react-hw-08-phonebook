@@ -1,9 +1,9 @@
 import React from 'react';
 import { BiSearch, BiX } from 'react-icons/bi';
-import { SearchInput, Label } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redax/filter/filterSlice';
 import { selectFilterValue } from 'redax/filter/filterSelectors';
+import { Input, InputGroup } from '@chakra-ui/react';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -18,8 +18,8 @@ function Filter() {
   };
 
   return (
-    <Label>
-      <SearchInput
+    <InputGroup>
+      <Input
         value={filterValue}
         type="text"
         placeholder="Search by names..."
@@ -29,7 +29,7 @@ function Filter() {
       />
       {!filterValue && <BiSearch size="20" />}
       {filterValue && <BiX size="20" onClick={resetFilter} />}
-    </Label>
+    </InputGroup>
   );
 }
 

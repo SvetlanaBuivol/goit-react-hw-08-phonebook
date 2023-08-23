@@ -12,14 +12,6 @@ function Contact({ id, name, number }) {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // const showModal = () => {
-  //   setIsModalVisible(true);
-  // }
-
-  // const closeModal = () => {
-  //   setIsModalVisible(false);
-  // }
-
   const removeContact = contactId => {
     dispatch(deleteContactAsync(contactId))
       .then(() => {
