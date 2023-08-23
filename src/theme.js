@@ -126,9 +126,10 @@ export const mainGridItem = {
 };
 
 export const navList = {
-    fontSize: 'sm',
+    fontSize: {base: 'xxs', md: 'xs', lg: 'sm'},
+    fontWeight: '500',
     color: 'customColor.500',
-  gap: '24px',
+  gap: '20px',
   alignItems: 'center',
   display: 'flex',
   flexDirection: { base: 'flex', md: 'column' },
