@@ -1,8 +1,19 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { registerAsync } from 'redax/auth/authOperations';
-import { Button, FormControl, Input } from '@chakra-ui/react';
-
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react';
+import { MdEmail } from 'react-icons/md';
+import { formLabel, hoverIcon, inputLeftEl } from 'theme';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { BsFillPersonFill } from 'react-icons/bs';
 
 function RegisterForm() {
   const dispatch = useDispatch();
@@ -23,45 +34,69 @@ function RegisterForm() {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     dispatch(registerAsync({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
-    <FormControl onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Name
-        <Input variant='filled' type="text" name="name" value={name} onChange={handleChange} />
-      </label>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <FormControl>
+        <FormLabel sx={formLabel}>Name</FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={BsFillPersonFill} color="customColor.200" />
+          </InputLeftElement>
+          <Input
+            variant="filled"
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          />
+        </InputGroup>
+      </FormControl>
+      
+      <FormControl>
+        <FormLabel sx={formLabel}>Email</FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={MdEmail} color="customColor.200" />
+          </InputLeftElement>
+          <Input
+            variant="filled"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </InputGroup>
+      </FormControl>
 
-      <label>
-        Email
-        <Input variant='filled'
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
-      </label>
+      <FormControl>
+        <FormLabel sx={formLabel}>Password </FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={RiLockPasswordFill} color="customColor.200" />
+          </InputLeftElement>
+          <Input
+            variant="filled"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </InputGroup>
+      </FormControl>
 
-      <label>
-        Password
-        <Input
-          variant='filled'
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-      </label>
-
-      <Button variant='myBtn' type="submit">Register</Button>
-    </FormControl>
+      <Button variant="myBtn" type="submit">
+        Register
+      </Button>
+    </form>
   );
 }
 

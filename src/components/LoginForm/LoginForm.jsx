@@ -1,8 +1,18 @@
-import { Button, FormControl, FormLabel, Icon, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react';
 import { useState } from 'react';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { loginAsync } from 'redax/auth/authOperations';
+import { MdEmail } from 'react-icons/md';
+import { formLabel, hoverIcon, inputLeftEl } from 'theme';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -31,30 +41,35 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
       <FormControl>
-        <FormLabel> Email</FormLabel>
-        <Input
-          variant="filled"
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
+        <FormLabel sx={formLabel}>Email</FormLabel>
+        <InputGroup sx={hoverIcon}>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={MdEmail} color="customColor.200" />
+          </InputLeftElement>
+          <Input
+            variant="filled"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </InputGroup>
       </FormControl>
 
       <FormControl>
-        <FormLabel>Password</FormLabel>
-        <InputGroup>
-        <InputLeftElement pointerEvents='none'>
-      <Icon as={RiLockPasswordFill} />
-    </InputLeftElement>
-        <Input
-          variant="filled"
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
+        <FormLabel sx={formLabel}>Password</FormLabel>
+        <InputGroup sx={hoverIcon} alignContent='center'>
+          <InputLeftElement sx={inputLeftEl}>
+            <Icon as={RiLockPasswordFill} color="customColor.200" />
+          </InputLeftElement>
+          <Input
+            variant="filled"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
           />
-          </InputGroup>
+        </InputGroup>
       </FormControl>
 
       <Button variant="myBtn" type="submit">

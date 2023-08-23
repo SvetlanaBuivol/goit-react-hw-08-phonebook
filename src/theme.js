@@ -1,35 +1,19 @@
 import { defineStyleConfig, extendTheme } from '@chakra-ui/react';
 
-// const theme = extendTheme({
-//   colors: {
-//     customColor: {
-//       50: '#ddd',
-//       100: '#ccc',
-//       200: '#999',
-//       300: '#666',
-//       400: '#555',
-//     },
-//   },
-//   components: {
-//     Button: {
-//       bg: 'customColor.100',
-//       color: 'customColor.300',
-//     },
-//   },
-
-// });
 const colors = {
   customColor: {
     50: '#ddd',
     100: '#ccc',
     200: '#999',
     300: '#666',
-    400: '#555',
+        400: '#555',
+    500: '#444',
   },
 };
 
 const fontSizes = {
-  sm: '1.2em',
+    xs: '1.2em',
+    sm: '1.3em',
   md: '1.5em',
   lg: '1.75em',
 };
@@ -41,47 +25,21 @@ const breakpoints = {
   xl: '1200px',
 };
 
-// const components = {
-//   Button: {
-//     variants: {
-//       myBtn: {
-//         backgroundColor: '#ccc',
-//         color: '#666',
-//         fontSize: '1.1em',
-//         fontWeight: '400',
-//         py: '10px',
-//         px: '20px',
-//         m: '0',
-//         border: 'none',
-//         borderRadius: '5px',
-//         transition: 'background-color 0.3s ease, color 0.3s ease',
-//         _hover: {
-//           backgroundColor: '#999',
-//           color: '#fff',
-//         },
-//       },
-//     },
-//   },
-//   Input: {
-//     variants: {
-//       csInput: {
-//             outline: 'solid',
-//           color: 'red',
-//       },
-//     },
-//   },
-// };
-
 const Button = defineStyleConfig({
   variants: {
     myBtn: {
+          display: 'block',
+        height: '2.8rem',
       backgroundColor: '#ccc',
       color: '#666',
-      fontSize: '1.1em',
+      fontSize: 'xs',
       fontWeight: '400',
       py: '10px',
       px: '20px',
       m: '0',
+      mt: '24px',
+      ml: 'auto',
+      mr: 'auto',
       border: 'none',
       borderRadius: '5px',
       transition: 'background-color 0.3s ease, color 0.3s ease',
@@ -97,6 +55,9 @@ const Input = defineStyleConfig({
   variants: {
     filled: {
       field: {
+        height: '3rem',
+            fontSize: 'md',
+        color: 'customColor.500',
         bg: 'customColor.50',
         _hover: {
           bg: 'customColor.100',
@@ -117,3 +78,26 @@ export const theme = extendTheme({
   breakpoints,
   components: { Button, Input },
 });
+
+// common styles //
+
+export const hoverIcon = {
+  _hover: {
+    svg: {
+      transform: 'scale(1.2)',
+      fill: 'customColor.300',
+      transition: 'transform 0.250s ease',
+    },
+  },
+};
+
+export const inputLeftEl = {
+  pointerEvent: 'none',
+  height: '100%',
+};
+
+export const formLabel = {
+    fontSize: 'sm',
+    color: 'customColor.300',
+    mb: '4px',
+}
