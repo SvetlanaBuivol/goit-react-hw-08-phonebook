@@ -199,3 +199,7 @@ export const userText = {
   color: 'customColor.500',
   textAlign: 'center',
 };
+
+export const filterInput = {
+    w: {base: '185px', md:'230px', lg:'400px'}, mx: 'auto',
+}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redax/filter/filterSlice';
 import { selectFilterValue } from 'redax/filter/filterSelectors';
 import { Icon, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import { filterInput } from 'theme';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Filter() {
   };
 
   return (
-    <InputGroup w={{base: '185px', md:'230px', lg:'400px'}} mx='auto' >
+    <InputGroup sx={filterInput} >
       <Input
         variant='flushed'
         value={filterValue}
