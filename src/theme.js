@@ -57,7 +57,7 @@ const Input = defineStyleConfig({
     filled: {
       field: {
         height: '3rem',
-        fontSize: 'md',
+        fontSize: {base: 'sm', md: 'md'},
         color: 'customColor.500',
         bg: 'customColor.50',
         _hover: {

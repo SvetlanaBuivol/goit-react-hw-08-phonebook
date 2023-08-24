@@ -38,11 +38,11 @@ function Contact({ id, name, number }) {
       <p>{name}</p>
       <div>
         <p>{number}</p>
-        <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen}><RiEdit2Line /></IconButton>
+        <div>
+        <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen} icon={<RiEdit2Line />}/>
+          <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)} icon={<RiDeleteBin6Line />} />
+          </div>
         <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
-        <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)}>
-          <RiDeleteBin6Line />
-        </IconButton>
       </div>
     </ContactItem>
   );

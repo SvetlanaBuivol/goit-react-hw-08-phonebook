@@ -4,7 +4,7 @@ export const ContactItem = styled.li`
   display: flex;
   justify-content: space-around;
   padding: 12px;
-  padding-left: 30px;
+  padding-left: 20px;
   color: #555;
   -webkit-tap-highlight-color: transparent;
 
@@ -41,7 +41,7 @@ export const ContactItem = styled.li`
     box-shadow: 0 -20px 0 0 #fff;
   }
   p {
-    width: 140px;
+    width: 160px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,6 +50,7 @@ export const ContactItem = styled.li`
 
   div {
     display: flex;
+    gap: 20px;
   }
 `;
 
