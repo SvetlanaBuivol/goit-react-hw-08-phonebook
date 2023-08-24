@@ -56,7 +56,7 @@ const Input = defineStyleConfig({
   variants: {
     filled: {
       field: {
-        height: '3rem',
+        height: { base: '2.5rem', md: '2.8rem', lg: '3rem' },
         fontSize: { base: 'sm', md: 'md' },
         color: 'customColor.500',
         bg: 'customColor.50',
@@ -174,7 +174,7 @@ export const iconBtnBox = {
 };
 
 export const userMenu = {
-  gap: '16px',
+  gap: { base: '8px', md: '16px' },
   alignItems: 'center',
   flexDirection: { base: 'row', md: 'column' },
 };
@@ -183,4 +183,5 @@ export const userText = {
   fontSize: { base: 'xxs', md: 'xs', lg: 'xs' },
   fontWeight: '500',
   color: 'customColor.500',
+  textAlign: 'center',
 };

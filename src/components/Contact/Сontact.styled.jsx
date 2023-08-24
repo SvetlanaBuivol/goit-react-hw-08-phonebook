@@ -39,7 +39,4 @@ export const ContactItem = styled(HStack)`
     border-top-right-radius: 18px;
     box-shadow: 0 -20px 0 0 #fff;
   }
-  
 `;
-
-
