@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux';
 import { deleteContactAsync } from 'redax/contacts/contactsOperetions';
 import { Notify } from 'notiflix';
 import EditModal from 'components/Modal/EditModal';
-import {  Box, IconButton, useDisclosure } from '@chakra-ui/react';
-import { iconBtn } from 'theme';
+import { Box, IconButton, useDisclosure } from '@chakra-ui/react';
+import { contactBox, iconBtn, iconBtnBox } from 'theme';
 
 function Contact({ id, name, number }) {
   const dispatch = useDispatch();
@@ -32,19 +32,38 @@ function Contact({ id, name, number }) {
       });
   };
 
-
   return (
-    <ContactItem spacing={{base: '6px', lg:'32px'}}
-      as='li' id={id}>
-      <Box as='p' w={{base:'130px', md:'190px', lg:'240px'}}>{name}</Box>
-      <Box as='p' w={{base:'130px',md:'190px', lg:'240px'}} >{number}</Box>
-        <Box as='div' display='flex' gap={{base:'6px',lg:'12px'}} zIndex={100}>
-        <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen} icon={<RiEdit2Line />}/>
-          <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)} icon={<RiDeleteBin6Line />} />
+    <ContactItem spacing={{ base: '6px', lg: '32px' }} as="li" id={id}>
+      <Box as="p" sx={contactBox}>
+        {name}
       </Box>
-      
-        <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
-      
+      <Box as="p" sx={contactBox}>
+        {number}
+      </Box>
+      <Box as="div" sx={iconBtnBox}>
+        <IconButton
+          size="xs"
+          sx={iconBtn}
+          aria-label="edit contact"
+          type="button"
+          onClick={onOpen}
+          icon={<RiEdit2Line />}
+        />
+        <IconButton
+          size="xs"
+          sx={iconBtn}
+          aria-label="delete contact"
+          type="button"
+          onClick={() => removeContact(id)}
+          icon={<RiDeleteBin6Line />}
+        />
+      </Box>
+
+      <EditModal
+        isOpen={isOpen}
+        onClose={onClose}
+        contact={{ id, name, number }}
+      />
     </ContactItem>
   );
 }

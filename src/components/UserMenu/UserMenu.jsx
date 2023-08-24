@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutAsync } from 'redax/auth/authOperations';
 import { getUserName } from 'redax/auth/authSelectors';
+import { userMenu, userText } from 'theme';
 
 function UserMenu() {
   const name = useSelector(getUserName);
@@ -13,8 +14,8 @@ function UserMenu() {
   };
 
   return (
-    <Flex gap="16px" alignItems="center" flexDirection={{ md: 'column' }}>
-      <Text fontSize="1em">Hello, {name}</Text>
+    <Flex sx={userMenu}>
+      <Text sx={userText}>Hello, {name}</Text>
       <Button variant="myBtn" mt={{ base: '0' }} onClick={handleClick}>
         Logout
       </Button>

@@ -30,15 +30,15 @@ const Button = defineStyleConfig({
   variants: {
     myBtn: {
       display: 'block',
-      height: {base: '2.3rem', md: '2.8rem'},
+      height: { base: '2.3rem', md: '2.8rem' },
       backgroundColor: 'customColor.100',
       color: 'customColor.300',
-      fontSize: {base: 'xxs', md: 'xs'},
+      fontSize: { base: 'xxs', md: 'xs' },
       fontWeight: '500',
-      py: {base: '5px', md: '10px'},
-      px: {base: '10px', md: '20px'},
+      py: { base: '5px', md: '10px' },
+      px: { base: '10px', md: '20px' },
       m: '0',
-      mt:'24px',
+      mt: '24px',
       ml: 'auto',
       mr: 'auto',
       border: 'none',
@@ -57,7 +57,7 @@ const Input = defineStyleConfig({
     filled: {
       field: {
         height: '3rem',
-        fontSize: {base: 'sm', md: 'md'},
+        fontSize: { base: 'sm', md: 'md' },
         color: 'customColor.500',
         bg: 'customColor.50',
         _hover: {
@@ -121,7 +121,7 @@ export const navGridItem = {
 };
 
 export const mainGridItem = {
-  py: '60px',
+  py: { base: '24px', md: '50px' },
   px: '20px',
 };
 
@@ -147,7 +147,7 @@ export const contactList = {
   mr: 'auto',
   mmb: '16px',
   backgroundImage: 'linear-gradient(70deg, #d6d6d6, #fcfbfb)',
-}
+};
 
 export const iconBtn = {
   color: 'customColor.300',
@@ -157,4 +157,30 @@ export const iconBtn = {
     backgroundColor: 'customColor.200',
     color: '#fff',
   },
-}
+};
+
+export const contactBox = {
+  w: { base: '130px', md: '190px', lg: '240px' },
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  fontSize: { base: 'xxs', md: 'xs', lg: 'sm' },
+};
+
+export const iconBtnBox = {
+  display: 'flex',
+  gap: { base: '6px', lg: '12px' },
+  zIndex: 100,
+};
+
+export const userMenu = {
+  gap: '16px',
+  alignItems: 'center',
+  flexDirection: { base: 'row', md: 'column' },
+};
+
+export const userText = {
+  fontSize: { base: 'xxs', md: 'xs', lg: 'xs' },
+  fontWeight: '500',
+  color: 'customColor.500',
+};
