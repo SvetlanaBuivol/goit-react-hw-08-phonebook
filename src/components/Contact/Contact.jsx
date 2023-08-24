@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RiDeleteBin6Line, RiEdit2Line } from 'react-icons/ri';
-import { ContactItem, DeleteBtn } from './Сontact.styled';
+import { ContactItem } from './Сontact.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContactAsync } from 'redax/contacts/contactsOperetions';
 import { Notify } from 'notiflix';
 import EditModal from 'components/Modal/EditModal';
-import { useDisclosure } from '@chakra-ui/react';
+import { IconButton, useDisclosure } from '@chakra-ui/react';
+import { iconBtn } from 'theme';
 
 function Contact({ id, name, number }) {
   const dispatch = useDispatch();
@@ -37,11 +38,11 @@ function Contact({ id, name, number }) {
       <p>{name}</p>
       <div>
         <p>{number}</p>
-        <DeleteBtn type="button" onClick={onOpen}><RiEdit2Line /></DeleteBtn>
+        <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen}><RiEdit2Line /></IconButton>
         <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
-        <DeleteBtn type="button" onClick={() => removeContact(id)}>
+        <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)}>
           <RiDeleteBin6Line />
-        </DeleteBtn>
+        </IconButton>
       </div>
     </ContactItem>
   );

@@ -134,3 +134,27 @@ export const navList = {
   display: 'flex',
   flexDirection: { base: 'flex', md: 'column' },
 };
+
+export const contactList = {
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: '700px',
+  pt: '20px',
+  pb: '20px',
+  pl: '30px',
+  height: '100hv',
+  ml: 'auto',
+  mr: 'auto',
+  mmb: '16px',
+  backgroundImage: 'linear-gradient(70deg, #d6d6d6, #fcfbfb)',
+}
+
+export const iconBtn = {
+  color: 'customColor.300',
+  backgroundColor: 'customColor.100',
+  borderRadius: '4px',
+  _hover: {
+    backgroundColor: 'customColor.200',
+    color: '#fff',
+  },
+}
