@@ -3,7 +3,7 @@ import { BiSearch, BiX } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redax/filter/filterSlice';
 import { selectFilterValue } from 'redax/filter/filterSelectors';
-import { Input, InputGroup } from '@chakra-ui/react';
+import { Icon, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -18,17 +18,21 @@ function Filter() {
   };
 
   return (
-    <InputGroup>
+    <InputGroup w={{base: '185px', md:'230px', lg:'400px'}} mx='auto' >
       <Input
+        variant='flushed'
         value={filterValue}
         type="text"
         placeholder="Search by names..."
         pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         name="search"
         onChange={handleFilterChange}
+        
       />
-      {!filterValue && <BiSearch size="20" />}
-      {filterValue && <BiX size="20" onClick={resetFilter} />}
+      <InputRightElement>
+      {!filterValue && <Icon as={BiSearch} color="customColor.200" />}
+        {filterValue && <Icon as={BiX} onClick={resetFilter} color="customColor.200" />}
+        </InputRightElement>
     </InputGroup>
   );
 }

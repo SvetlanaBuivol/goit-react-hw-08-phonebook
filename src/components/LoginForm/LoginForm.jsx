@@ -54,6 +54,7 @@ function LoginForm() {
             name="email"
             value={email}
             onChange={handleChange}
+            required
           />
         </InputGroup>
       </FormControl>
@@ -70,6 +71,7 @@ function LoginForm() {
             name="password"
             value={password}
             onChange={handleChange}
+            required
           />
         </InputGroup>
       </FormControl>

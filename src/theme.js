@@ -57,7 +57,7 @@ const Input = defineStyleConfig({
     filled: {
       field: {
         height: { base: '2.5rem', md: '2.8rem', lg: '3rem' },
-        fontSize: { base: 'sm', md: 'md' },
+        fontSize: { base: 'xs', md: 'md' },
         color: 'customColor.500',
         bg: 'customColor.50',
         _hover: {
@@ -68,6 +68,20 @@ const Input = defineStyleConfig({
         },
         outline: 'none',
         border: 'none',
+      },
+    },
+    flushed: {
+      field: {
+        color: 'customColor.500',
+        fontSize: { base: 'sm', md: 'md' },
+        height: { base: '2.5rem', md: '2.8rem', lg: '3rem' },
+        _hover: {
+          borderColor: 'white',
+        },
+        _focusVisible: {
+          borderColor: 'white',
+          boxShadow: 'none',
+        },
       },
     },
   },

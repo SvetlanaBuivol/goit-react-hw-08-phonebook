@@ -8,8 +8,10 @@ import { Notify } from 'notiflix';
 import Filter from 'components/Filter/Filter';
 import { List, Text } from '@chakra-ui/react';
 import { contactList, userText } from 'theme';
+import { getContacts } from 'redax/contacts/contactSelectors';
 
 function ContactList() {
+  const contacts = useSelector(getContacts);
   const filteredcontacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
 
@@ -23,7 +25,7 @@ function ContactList() {
 
   return (
     <List sx={contactList}>
-      {filteredcontacts.length && <Filter />}
+      {contacts.length && <Filter />}
       {filteredcontacts.length !== 0 ? (
         filteredcontacts.map(({ name, number, id }) => {
           return <Contact key={id} name={name} number={number} id={id} />;
