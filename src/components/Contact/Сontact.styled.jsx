@@ -1,8 +1,8 @@
+import { HStack } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-export const ContactItem = styled.li`
-  display: flex;
-  justify-content: space-around;
+export const ContactItem = styled(HStack)`
+  /* justify-content: space-around; */
   padding: 12px;
   padding-left: 20px;
   color: #555;
@@ -41,7 +41,7 @@ export const ContactItem = styled.li`
     box-shadow: 0 -20px 0 0 #fff;
   }
   p {
-    width: 160px;
+    /* width: 160px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,7 +50,7 @@ export const ContactItem = styled.li`
 
   div {
     display: flex;
-    gap: 20px;
+    gap: 12px;
   }
 `;
 

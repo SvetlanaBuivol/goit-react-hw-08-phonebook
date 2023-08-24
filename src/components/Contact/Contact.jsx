@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContactAsync } from 'redax/contacts/contactsOperetions';
 import { Notify } from 'notiflix';
 import EditModal from 'components/Modal/EditModal';
-import { IconButton, useDisclosure } from '@chakra-ui/react';
+import {  Box, IconButton, useDisclosure } from '@chakra-ui/react';
 import { iconBtn } from 'theme';
 
 function Contact({ id, name, number }) {
@@ -34,16 +34,19 @@ function Contact({ id, name, number }) {
 
 
   return (
-    <ContactItem id={id}>
-      <p>{name}</p>
-      <div>
-        <p>{number}</p>
-        <div>
+    <ContactItem spacing={{base: '12px', lg:'32px'}}
+      as='li' id={id}>
+      <Box as='p' w='240px'>{name}</Box>
+    
+      <Box as='p' w='240px' >{number}</Box>
+      
+        <div >
         <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen} icon={<RiEdit2Line />}/>
           <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)} icon={<RiDeleteBin6Line />} />
-          </div>
-        <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
       </div>
+      
+        <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
+      
     </ContactItem>
   );
 }
