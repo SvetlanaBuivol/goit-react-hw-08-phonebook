@@ -53,21 +53,4 @@ export const ContactItem = styled.li`
   }
 `;
 
-// export const DeleteBtn = styled.button`
-//   display: flex;
-//   width: 24px;
-//   height: 24px;
-//   justify-content: center;
-//   align-items: center;
-//   border: none;
-//   cursor: pointer;
-//   color: #555;
-//   background-color: #ccc;
-//   border-radius: 4px;
-//   transition: background-color 0.3s ease;
-//   :hover {
-//     background-color: #999;
-//   }
-// `;
-
 
