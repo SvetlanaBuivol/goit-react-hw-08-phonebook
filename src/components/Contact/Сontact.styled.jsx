@@ -47,11 +47,11 @@ export const ContactItem = styled(HStack)`
     text-overflow: ellipsis;
     font-size: 18px;
   }
-
+/* 
   div {
     display: flex;
     gap: 12px;
-  }
+  } */
 `;
 
 

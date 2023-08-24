@@ -34,16 +34,14 @@ function Contact({ id, name, number }) {
 
 
   return (
-    <ContactItem spacing={{base: '12px', lg:'32px'}}
+    <ContactItem spacing={{base: '6px', lg:'32px'}}
       as='li' id={id}>
-      <Box as='p' w='240px'>{name}</Box>
-    
-      <Box as='p' w='240px' >{number}</Box>
-      
-        <div >
+      <Box as='p' w={{base:'95px', md:'160px', lg:'230px'}}>{name}</Box>
+      <Box as='p' w={{base:'95px',md:'160px', lg:'230px'}} >{number}</Box>
+        <Box as='div' display='flex' gap={{base:'6px',lg:'12px'}}>
         <IconButton size='xs' sx={iconBtn} aria-label='edit contact' type="button" onClick={onOpen} icon={<RiEdit2Line />}/>
           <IconButton size='xs' sx={iconBtn} aria-label='delete contact' type="button" onClick={() => removeContact(id)} icon={<RiDeleteBin6Line />} />
-      </div>
+      </Box>
       
         <EditModal isOpen={isOpen} onClose={onClose} contact={{id, name, number}} />
       
