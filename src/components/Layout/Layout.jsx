@@ -22,10 +22,11 @@ function Layout() {
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </GridItem>
       <GridItem as="main" colSpan={{ base: 7, md: 6, lg: 6 }}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-          </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </GridItem>
+      
     </Grid>
   );
 }
