@@ -1,4 +1,3 @@
-import MainContainer from 'components/Container/Container';
 import { FaPhone } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,6 @@ const HomeGritings = () => {
 
   return (
     <section className="homePage">
-      <MainContainer>
         <div className="content">
           <div className="phoneIcon">
             <FaPhone className="swing" />
@@ -26,7 +24,6 @@ const HomeGritings = () => {
             ) : null}
           </p>
         </div>
-      </MainContainer>
     </section>
   );
 };

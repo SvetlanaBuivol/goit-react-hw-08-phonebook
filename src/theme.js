@@ -220,7 +220,7 @@ export const textForm = {
 };
 
 export const container = {
-    maxWidth: '100%',
+  maxWidth: '100%',
   py: { base: '24px', md: '50px' },
   px: '20px',
 };

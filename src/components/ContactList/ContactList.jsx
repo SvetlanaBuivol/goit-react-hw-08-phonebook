@@ -9,7 +9,6 @@ import Filter from 'components/Filter/Filter';
 import { List, Text } from '@chakra-ui/react';
 import { contactList, userText } from 'theme';
 import { getContacts } from 'redax/contacts/contactSelectors';
-import MainContainer from 'components/Container/Container';
 
 function ContactList() {
   const contacts = useSelector(getContacts);
@@ -25,7 +24,6 @@ function ContactList() {
   }, [dispatch]);
 
   return (
-    <MainContainer>
       <List sx={contactList}>
         {contacts.length && <Filter />}
         {filteredcontacts.length !== 0 ? (
@@ -36,7 +34,6 @@ function ContactList() {
           <Text sx={userText}>Contact list is empty</Text>
         )}
       </List>
-    </MainContainer>
   );
 }
 
