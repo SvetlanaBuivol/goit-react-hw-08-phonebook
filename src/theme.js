@@ -8,6 +8,7 @@ const colors = {
     300: '#666',
     400: '#555',
     500: '#444',
+    600: '#333',
   },
 };
 
@@ -134,8 +135,6 @@ export const navGridItem = {
   p: { sm: '15px', lg: '36px' },
 };
 
-export const mainGridItem = {};
-
 export const navList = {
   fontSize: { base: 'xxs', md: 'xs', lg: 'sm' },
   fontWeight: '500',
@@ -223,4 +222,34 @@ export const container = {
   maxWidth: '100%',
   py: { base: '24px', md: '50px' },
   px: '20px',
+};
+
+// FOOTER //
+
+export const footerBox = {
+  display: 'flex',
+  justifyContent: 'space-around',
+  p: '12px',
+  bg: 'customColor.600',
+  color: 'customColor.50',
+  fontSize: { base: '0.7em', md: 'xxs' },
+  opacity: '0.7',
+};
+
+export const footerDivider = {
+  borderColor: 'customColor.600',
+  opacity: '0.8',
+};
+
+export const footerLinks = {
+  gap: '18px',
+};
+
+export const iconSocial = {
+  color: 'customColor.500',
+  backgroundColor: 'customColor.50',
+  _hover: {
+    color: '#f15a24',
+    transform: 'scale(1.1)',
+  },
 };

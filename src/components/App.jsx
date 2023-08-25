@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshCurrentUserAsync } from 'redax/auth/authOperations';
 import PrivateRoute from './utils/routes/PrivateRoute';
 import PublicRoute from './utils/routes/PublicRoute';
-import { getRefreshingUser } from 'redax/auth/authSelectors';
+import {  getRefreshingUser } from 'redax/auth/authSelectors';
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
 const Login = lazy(() => import('pages/Login'));

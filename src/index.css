@@ -66,12 +66,12 @@ form:hover {
   align-items: center;
   height: 100vh;
   background-color: #333;
-  color: #fff;
+  color: #ddd;
 }
 
 .content {
   text-align: center;
-  color: white;
+  color: #ddd;
   padding: 15px 20px;
   padding-bottom: 85px;
 

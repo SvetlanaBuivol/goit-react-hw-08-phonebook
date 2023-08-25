@@ -16,7 +16,7 @@ import { loginAsync } from 'redax/auth/authOperations';
 import { MdEmail } from 'react-icons/md';
 import { formHeader, formLabel, hoverIcon, inputLeftEl, textForm } from 'theme';
 import { Link } from 'react-router-dom';
-import MainContainer from 'components/Container/Container';
+import MainContainer from 'components/MainContainer/MainContainer';
 
 function LoginForm() {
   const dispatch = useDispatch();

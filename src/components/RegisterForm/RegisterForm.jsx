@@ -17,7 +17,7 @@ import { formHeader, formLabel, hoverIcon, inputLeftEl, textForm } from 'theme';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import MainContainer from 'components/Container/Container';
+import MainContainer from 'components/MainContainer/MainContainer';
 
 function RegisterForm() {
   const dispatch = useDispatch();
