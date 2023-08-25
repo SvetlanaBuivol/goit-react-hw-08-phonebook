@@ -58,5 +58,78 @@ form:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* HOME styles */
 
+.homePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+  color: #fff;
+
+}
+
+.content {
+  text-align: center;
+  color: white;
+}
+
+.typedText {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards 0.5s;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.description span {
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 1rem;
+}
+
+.description a {
+  color: #f15a24;
+}
+
+.phoneIcon {
+  animation: swing 2s ease-in-out infinite;
+  font-size: 3rem;
+  color: #f15a24;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swing {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20%,
+  60% {
+    transform: rotate(15deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(-10deg);
+  }
+}
 

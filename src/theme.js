@@ -100,7 +100,7 @@ export const hoverIcon = {
   _hover: {
     svg: {
       transform: 'scale(1.2)',
-      fill: 'customColor.300',
+      fill: '#f15a24',
       transition: 'transform 0.250s ease',
     },
   },
@@ -134,10 +134,7 @@ export const navGridItem = {
   p: { sm: '15px', lg: '36px' },
 };
 
-export const mainGridItem = {
-  py: { base: '24px', md: '50px' },
-  px: '20px',
-};
+export const mainGridItem = {};
 
 export const navList = {
   fontSize: { base: 'xxs', md: 'xs', lg: 'sm' },
@@ -159,6 +156,7 @@ export const contactList = {
   height: '100hv',
   ml: 'auto',
   mr: 'auto',
+  mt: { base: '8px', md: '10px' },
   mmb: '16px',
   backgroundImage: 'linear-gradient(70deg, #d6d6d6, #fcfbfb)',
 };
@@ -201,5 +199,28 @@ export const userText = {
 };
 
 export const filterInput = {
-    w: {base: '185px', md:'230px', lg:'400px'}, mx: 'auto',
-}
+  w: { base: '185px', md: '230px', lg: '400px' },
+  mx: 'auto',
+};
+
+export const navLinkActive = {
+  _active: {
+    color: '#f15a24',
+  },
+};
+
+export const textForm = {
+  textAlign: 'center',
+  mt: '6px',
+  fontSize: 'xxs',
+  color: 'customColor.400',
+  a: {
+    color: '#f15a24',
+  },
+};
+
+export const container = {
+    maxWidth: '100%',
+  py: { base: '24px', md: '50px' },
+  px: '20px',
+};

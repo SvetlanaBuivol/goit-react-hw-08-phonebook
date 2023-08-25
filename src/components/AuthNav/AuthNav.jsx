@@ -1,5 +1,5 @@
 import { List, ListItem } from '@chakra-ui/react';
-import { NavLink } from 'react-router-dom';
+import { NavLinkStyled } from 'components/Navigation/Navigation.styled';
 import { navList } from 'theme';
 
 function AuthNav() {
@@ -7,10 +7,10 @@ function AuthNav() {
     <nav>
       <List sx={navList}>
         <ListItem>
-          <NavLink to="/register">Register</NavLink>
+          <NavLinkStyled to="/register">Register</NavLinkStyled>
         </ListItem>
         <ListItem>
-          <NavLink to="/login">Log in</NavLink>
+          <NavLinkStyled to="/login">Log in</NavLinkStyled>
         </ListItem>
       </List>
     </nav>

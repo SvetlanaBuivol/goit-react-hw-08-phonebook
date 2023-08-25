@@ -13,10 +13,12 @@ import {
   Input,
   FormControl,
   FormLabel,
+  Divider,
 } from '@chakra-ui/react';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 import { editContactAsync } from 'redax/contacts/contactsOperetions';
+import { formHeader, formLabel } from 'theme';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -59,11 +61,12 @@ function EditModal({ isOpen, onClose, contact }) {
         backdropFilter="blur(2px) hue-rotate(90deg)"
       />
       <ModalContent>
-        <ModalHeader>Edit Contact</ModalHeader>
+        <ModalHeader sx={formHeader}>Edit Contact</ModalHeader>
+        <Divider/>
         <ModalCloseButton />
         <ModalBody>
           <FormControl>
-            <FormLabel>Name</FormLabel>
+            <FormLabel sx={formLabel}>Name</FormLabel>
             <Input
               variant="filled"
               value={name}
@@ -71,7 +74,7 @@ function EditModal({ isOpen, onClose, contact }) {
             />
           </FormControl>
           <FormControl mt={4}>
-            <FormLabel>Number</FormLabel>
+            <FormLabel sx={formLabel}>Number</FormLabel>
             <Input
               variant="filled"
               value={number}

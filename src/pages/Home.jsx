@@ -1,5 +1,7 @@
+import HomeGritings from "components/HomeGritings/HomeGritings";
+
 function Home() {
-    return <div>Phonebook</div>
+    return <HomeGritings/>
 }
 
 export default Home;

@@ -10,11 +10,14 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Text,
 } from '@chakra-ui/react';
 import { MdEmail } from 'react-icons/md';
-import { formHeader, formLabel, hoverIcon, inputLeftEl } from 'theme';
+import { formHeader, formLabel, hoverIcon, inputLeftEl, textForm } from 'theme';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import MainContainer from 'components/Container/Container';
 
 function RegisterForm() {
   const dispatch = useDispatch();
@@ -45,6 +48,7 @@ function RegisterForm() {
   };
 
   return (
+    <MainContainer>
     <form onSubmit={handleSubmit} autoComplete="off">
       <Heading sx={formHeader}>Register</Heading>
       <FormControl>
@@ -94,11 +98,13 @@ function RegisterForm() {
           />
         </InputGroup>
       </FormControl>
+      <Text sx={textForm}><Link to="/login">Log in</Link> if you already have an account.</Text>
 
       <Button variant="myBtn" type="submit">
         Register
       </Button>
-    </form>
+      </form>
+      </MainContainer>
   );
 }
 

@@ -3,11 +3,10 @@ import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-// import { Header } from './Layput.styled';
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redax/auth/authSelectors';
 import { Grid, GridItem } from '@chakra-ui/react';
-import { mainGridItem, navGridItem } from 'theme';
+import { navGridItem } from 'theme';
 
 function Layout() {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -22,9 +21,9 @@ function Layout() {
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </GridItem>
-      <GridItem as="main" sx={mainGridItem} colSpan={{ base: 7, md: 6, lg: 6 }}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
+      <GridItem as="main" colSpan={{ base: 7, md: 6, lg: 6 }}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
           </Suspense>
       </GridItem>
     </Grid>
