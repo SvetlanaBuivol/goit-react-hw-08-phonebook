@@ -77,9 +77,9 @@ form:hover {
 }
 
 .typedText {
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: bold;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease-out forwards 0.5s;
@@ -103,9 +103,9 @@ form:hover {
 
 .phoneIcon {
   animation: swing 2s ease-in-out infinite;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #f15a24;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 @keyframes fadeInUp {
