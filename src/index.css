@@ -72,6 +72,8 @@ form:hover {
 .content {
   text-align: center;
   color: white;
+  padding: 15px 20px;
+
 }
 
 .typedText {
