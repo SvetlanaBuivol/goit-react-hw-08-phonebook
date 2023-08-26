@@ -45,7 +45,8 @@ function Layout() {
       templateAreas={{base:`'header' 'main' 'footer'`, md: `'header main'
       'header footer'`}}
       gridTemplateRows={{base:'auto 1fr auto', md: '1fr auto'}}
-      gridTemplateColumns={{base: '1fr', md: 'auto 1fr'}}
+      gridTemplateColumns={{ base: '1fr', md: 'auto 1fr' }}
+      minHeight='100vh'
       >
       <GridItem
         as="header"
