@@ -38,6 +38,7 @@ function LoginForm() {
     event.preventDefault();
 
     dispatch(loginAsync({ email, password }));
+
     setEmail('');
     setPassword('');
   };

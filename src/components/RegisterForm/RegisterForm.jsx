@@ -49,62 +49,67 @@ function RegisterForm() {
 
   return (
     <MainContainer>
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <Heading sx={formHeader}>Register</Heading>
-      <FormControl>
-        <FormLabel sx={formLabel}>Name</FormLabel>
-        <InputGroup sx={hoverIcon}>
-          <InputLeftElement sx={inputLeftEl}>
-            <Icon as={BsFillPersonFill} color="customColor.200" />
-          </InputLeftElement>
-          <Input
-            variant="filled"
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-          />
-        </InputGroup>
-      </FormControl>
-      
-      <FormControl>
-        <FormLabel sx={formLabel}>Email</FormLabel>
-        <InputGroup sx={hoverIcon}>
-          <InputLeftElement sx={inputLeftEl}>
-            <Icon as={MdEmail} color="customColor.200" />
-          </InputLeftElement>
-          <Input
-            variant="filled"
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </InputGroup>
-      </FormControl>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <Heading sx={formHeader}>Register</Heading>
+        <FormControl>
+          <FormLabel sx={formLabel}>Name</FormLabel>
+          <InputGroup sx={hoverIcon}>
+            <InputLeftElement sx={inputLeftEl}>
+              <Icon as={BsFillPersonFill} color="customColor.200" />
+            </InputLeftElement>
+            <Input
+              variant="filled"
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+              required
+            />
+          </InputGroup>
+        </FormControl>
 
-      <FormControl>
-        <FormLabel sx={formLabel}>Password </FormLabel>
-        <InputGroup sx={hoverIcon}>
-          <InputLeftElement sx={inputLeftEl}>
-            <Icon as={RiLockPasswordFill} color="customColor.200" />
-          </InputLeftElement>
-          <Input
-            variant="filled"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </InputGroup>
-      </FormControl>
-      <Text sx={textForm}><Link to="/login">Log in</Link> if you already have an account.</Text>
+        <FormControl>
+          <FormLabel sx={formLabel}>Email</FormLabel>
+          <InputGroup sx={hoverIcon}>
+            <InputLeftElement sx={inputLeftEl}>
+              <Icon as={MdEmail} color="customColor.200" />
+            </InputLeftElement>
+            <Input
+              variant="filled"
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              required
+            />
+          </InputGroup>
+        </FormControl>
 
-      <Button variant="myBtn" type="submit">
-        Register
-      </Button>
+        <FormControl>
+          <FormLabel sx={formLabel}>Password </FormLabel>
+          <InputGroup sx={hoverIcon}>
+            <InputLeftElement sx={inputLeftEl}>
+              <Icon as={RiLockPasswordFill} color="customColor.200" />
+            </InputLeftElement>
+            <Input
+              variant="filled"
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              required
+            />
+          </InputGroup>
+        </FormControl>
+        <Text sx={textForm}>
+          <Link to="/login">Log in</Link> if you already have an account.
+        </Text>
+
+        <Button variant="myBtn" type="submit">
+          Register
+        </Button>
       </form>
-      </MainContainer>
+    </MainContainer>
   );
 }
 

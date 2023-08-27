@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix';
 import { currentUser, logIn, logOut, signUp, token } from 'services/contactsApi';
 
 export const registerAsync = createAsyncThunk(
@@ -22,6 +23,9 @@ export const loginAsync = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      Notify.failure('Invalid email or password', {
+        position: 'center-top',
+      })
       return thunkAPI.rejectWithValue(error.message);
     }
   }
