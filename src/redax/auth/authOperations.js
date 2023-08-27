@@ -10,6 +10,9 @@ export const registerAsync = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      Notify.failure('Invalid email or password', {
+        position: 'center-top',
+      })
       return thunkAPI.rejectWithValue(error.message);
     }
   }
