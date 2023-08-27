@@ -27,9 +27,11 @@ function ContactList() {
     <List sx={contactList}>
       {contacts.length && <Filter />}
       {filteredcontacts.length !== 0 ? (
-        filteredcontacts.sort((a,b) => a.name.localeCompare(b.name)).map(({ name, number, id }) => {
-          return <Contact key={id} name={name} number={number} id={id} />;
-        })
+        filteredcontacts
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(({ name, number, id }) => {
+            return <Contact key={id} name={name} number={number} id={id} />;
+          })
       ) : (
         <Text sx={userText}>Contact list is empty</Text>
       )}
