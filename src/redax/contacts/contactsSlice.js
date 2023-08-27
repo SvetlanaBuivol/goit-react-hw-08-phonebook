@@ -43,12 +43,14 @@ const contactsSlice = createSlice({
       })
       .addCase(editContactAsync.pending, state => {
         state.loading = 'pending';
-    })
+      })
       .addCase(editContactAsync.fulfilled, (state, action) => {
-        const updatedIndex = state.contacts.findIndex(contact => contact.id === action.payload.id);
+        const updatedIndex = state.contacts.findIndex(
+          contact => contact.id === action.payload.id
+        );
         state.contacts[updatedIndex] = action.payload;
         state.loading = 'idle';
-    })
+      });
   },
 });
 

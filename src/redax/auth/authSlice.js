@@ -2,7 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { logOutAsync, loginAsync, refreshCurrentUserAsync, registerAsync } from './authOperations';
+import {
+  logOutAsync,
+  loginAsync,
+  refreshCurrentUserAsync,
+  registerAsync,
+} from './authOperations';
 
 const initialState = {
   user: { name: null, email: null },
@@ -25,7 +30,7 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     });
-    builder.addCase(logOutAsync.fulfilled, (state) => {
+    builder.addCase(logOutAsync.fulfilled, state => {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
@@ -40,7 +45,7 @@ const authSlice = createSlice({
     });
     builder.addCase(refreshCurrentUserAsync.rejected, state => {
       state.isRefreshing = false;
-    })
+    });
   },
 });
 
@@ -50,9 +55,6 @@ const persistConfig = {
   whitelist: ['token'],
 };
 
-export const authReducer = persistReducer(
-  persistConfig,
-  authSlice.reducer,
-);
+export const authReducer = persistReducer(persistConfig, authSlice.reducer);
 
 // export const authReducer = authSlice.reducer;

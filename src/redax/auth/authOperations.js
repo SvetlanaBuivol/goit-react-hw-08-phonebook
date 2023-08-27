@@ -1,6 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
-import { currentUser, logIn, logOut, signUp, token } from 'services/contactsApi';
+import {
+  currentUser,
+  logIn,
+  logOut,
+  signUp,
+  token,
+} from 'services/contactsApi';
 
 export const registerAsync = createAsyncThunk(
   'auth/register',
@@ -12,7 +18,7 @@ export const registerAsync = createAsyncThunk(
     } catch (error) {
       Notify.failure('Invalid email or password', {
         position: 'center-top',
-      })
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -28,34 +34,40 @@ export const loginAsync = createAsyncThunk(
     } catch (error) {
       Notify.failure('Invalid email or password', {
         position: 'center-top',
-      })
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-export const logOutAsync = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
-  try {
-    await logOut();
-    token.unset();
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+export const logOutAsync = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      await logOut();
+      token.unset();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
-export const refreshCurrentUserAsync = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  const persistedToken = state.auth.token;
+export const refreshCurrentUserAsync = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-  if (!persistedToken) {
-    return thunkAPI.rejectWithValue();
+    if (!persistedToken) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+    try {
+      const { data } = await currentUser();
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-
-  token.set(persistedToken);
-  try {
-    const { data } = await currentUser();
-    return data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
-  }
-})
+);

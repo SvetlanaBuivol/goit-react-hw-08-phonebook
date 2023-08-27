@@ -1,4 +1,9 @@
-import { addContact, deleteContact, editContact, fetchContacts } from 'services/contactsApi';
+import {
+  addContact,
+  deleteContact,
+  editContact,
+  fetchContacts,
+} from 'services/contactsApi';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchContactsAsync = createAsyncThunk(
@@ -43,8 +48,8 @@ export const editContactAsync = createAsyncThunk(
     try {
       const response = await editContact(contact);
       return response.data;
-    } catch(error) {
+    } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);

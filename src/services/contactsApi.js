@@ -8,20 +8,20 @@ export const token = {
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
-  }
-}
+  },
+};
 
 export const fetchContacts = () => axios.get('/contacts');
 
-export const addContact = contact =>
-  axios.post('/contacts', contact);
+export const addContact = contact => axios.post('/contacts', contact);
 
 export const deleteContact = contactId =>
   axios.delete(`/contacts/${contactId}`);
 
-export const editContact = ({id, name, number}) => axios.patch(`/contacts/${id}`, {name, number});
+export const editContact = ({ id, name, number }) =>
+  axios.patch(`/contacts/${id}`, { name, number });
 
-  // auth //
+// auth //
 
 export const signUp = credentials => axios.post('/users/signup', credentials);
 
@@ -30,4 +30,3 @@ export const logIn = credentials => axios.post('/users/login', credentials);
 export const logOut = () => axios.post('/users/logout');
 
 export const currentUser = () => axios.get('/users/current');
-

@@ -62,7 +62,7 @@ function EditModal({ isOpen, onClose, contact }) {
       />
       <ModalContent>
         <ModalHeader sx={formHeader}>Edit Contact</ModalHeader>
-        <Divider/>
+        <Divider />
         <ModalCloseButton />
         <ModalBody>
           <FormControl>
@@ -83,10 +83,12 @@ function EditModal({ isOpen, onClose, contact }) {
           </FormControl>
         </ModalBody>
         <ModalFooter>
-          <Button variant='myBtn' mr={3} onClick={handleSave}>
+          <Button variant="myBtn" mr={3} onClick={handleSave}>
             Save
           </Button>
-          <Button variant='myBtn' onClick={onClose}>Cancel</Button>
+          <Button variant="myBtn" onClick={onClose}>
+            Cancel
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>,

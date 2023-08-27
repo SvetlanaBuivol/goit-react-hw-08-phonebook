@@ -14,32 +14,25 @@ function Layout() {
 
   return (
     <Grid
-      templateAreas={{base:`'header' 'main' 'footer'`, md: `'header main'
-      'header footer'`}}
-      gridTemplateRows={{base:'auto 1fr auto', md: '1fr auto'}}
+      templateAreas={{
+        base: `'header' 'main' 'footer'`,
+        md: `'header main'
+      'header footer'`,
+      }}
+      gridTemplateRows={{ base: 'auto 1fr auto', md: '1fr auto' }}
       gridTemplateColumns={{ base: '1fr', md: 'auto 1fr' }}
-      minHeight='100vh'
-      >
-      <GridItem
-        as="header"
-        sx={navGridItem}
-        area={'header'}
-      >
+      minHeight="100vh"
+    >
+      <GridItem as="header" sx={navGridItem} area={'header'}>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </GridItem>
-      <GridItem
-        as="main"
-        area={'main'}
-      >
+      <GridItem as="main" area={'main'}>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
-          </Suspense>
+        </Suspense>
       </GridItem>
-      <GridItem
-        as="footer"
-       area={'footer'}
-      >
+      <GridItem as="footer" area={'footer'}>
         <Footer />
       </GridItem>
     </Grid>

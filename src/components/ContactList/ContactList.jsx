@@ -24,16 +24,16 @@ function ContactList() {
   }, [dispatch]);
 
   return (
-      <List sx={contactList}>
-        {contacts.length && <Filter />}
-        {filteredcontacts.length !== 0 ? (
-          filteredcontacts.map(({ name, number, id }) => {
-            return <Contact key={id} name={name} number={number} id={id} />;
-          })
-        ) : (
-          <Text sx={userText}>Contact list is empty</Text>
-        )}
-      </List>
+    <List sx={contactList}>
+      {contacts.length && <Filter />}
+      {filteredcontacts.length !== 0 ? (
+        filteredcontacts.map(({ name, number, id }) => {
+          return <Contact key={id} name={name} number={number} id={id} />;
+        })
+      ) : (
+        <Text sx={userText}>Contact list is empty</Text>
+      )}
+    </List>
   );
 }
 
